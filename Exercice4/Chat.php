@@ -37,11 +37,12 @@ class Chat
             $this->couleur = $c;
         }
 
-        if ($s !== 'male' || $s !== 'female'){
-            echo 'Le sexe du chat est soit male soit female';
+        if ($s === 'male' || $s === 'female'){
+
+            $this->sexe = $s;
         }
         else{
-            $this->sexe = $s;
+            echo 'Le sexe du chat est soit male soit female';
         }
 
         if(strlen($r)<3 || strlen($r)>20){
@@ -67,8 +68,8 @@ class Chat
     public function __set($propriete, $valeur)
     {
         if(property_exists($this, $propriete)){
-            if ($propriete == "prenom"){
-                if(strlen($propriete)<3 || strlen($propriete)>10){
+            if ($propriete === "prenom"){
+                if(strlen($valeur)<3 || strlen($valeur)>10){
                     echo 'Le prenom doit comporter entre 3 et 10 caractères';
                 }
                 else{
@@ -77,7 +78,7 @@ class Chat
             }
 
             else if ($propriete == 'age') {
-                if (!is_int($propriete)) {
+                if (!is_int($valeur)) {
                     echo 'L\'âge du chat est entier';
                 }
                 else {
@@ -86,7 +87,7 @@ class Chat
             }
 
             else if ($propriete == 'couleur') {
-                if (strlen($propriete) < 3 || strlen($propriete) > 10) {
+                if (strlen($valeur) < 3 || strlen($valeur) > 10) {
                     echo 'La couleur doit comporter entre 3 et 10 caractères';
                 }
                 else {
@@ -95,7 +96,7 @@ class Chat
             }
 
             else if ($propriete == 'sexe') {
-                if ($propriete != 'male' || $propriete != 'female') {
+                if ($valeur != 'male' || $valeur != 'female') {
                     echo 'Le sexe du chat est soit male soit female';
                 }
                 else {

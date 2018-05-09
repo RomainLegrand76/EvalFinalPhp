@@ -8,12 +8,12 @@
 include_once('./Chat.php');
 
 $chat1 = new Chat('Felix', 15, 'Bleu', 'male', 'goutiere');
-$chat1->prenom = 'Fe';
+$chat1->age = 20;
 echo '<pre>';
 var_dump($chat1->getInfo());
 echo '</pre>';
 
-$chat2 = new Chat('Filou', 35, 'Rouge', 'Femelle', 'persan');
+$chat2 = new Chat('Filou', 35, 'Rouge', 'female', 'persan');
 echo '<pre>';
 var_dump($chat2->getInfo());
 echo '</pre>';
