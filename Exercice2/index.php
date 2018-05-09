@@ -69,7 +69,6 @@ if(!empty($_POST)) {
     }
 }
 
-// Requete pour afficher les données déjà existantes dans la BDD
 $queryUsers = $db->prepare('SELECT * FROM users'.$order);
 if($queryUsers->execute()){
 
@@ -145,7 +144,6 @@ if($queryUsers->execute()){
 
         <div class="col-md-5">
 
-            <!-- Début formulaire -->
             <form method="post" class="form-horizontal well well-sm">
                 <fieldset>
                     <legend>Ajouter un utilisateur</legend>
